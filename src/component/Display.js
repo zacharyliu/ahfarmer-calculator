@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 
 import "./Display.css";
 
-export default class Display extends React.Component {
+export default class Display extends React.PureComponent {
   static propTypes = {
-    value: PropTypes.string,
+    getValue: PropTypes.func,
   };
 
   render() {
     return (
       <div className="component-display">
-        <div>{this.props.value}</div>
+        <div>{this.props.getValue()}</div>
       </div>
     );
   }

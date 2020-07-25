@@ -15,10 +15,12 @@ export default class App extends React.Component {
     this.setState(calculate(this.state, buttonName));
   };
 
+  getValue = () => this.state.next || this.state.total || "0";
+
   render() {
     return (
       <div className="component-app">
-        <Display value={this.state.next || this.state.total || "0"} />
+        <Display getValue={this.getValue} />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
